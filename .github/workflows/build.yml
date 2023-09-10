@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: espressif/esp-idf:latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up ESP32 environment
+      run: |
+        . /opt/esp/idf/export.sh
+
+    - name: Build ESP32 project
+      run: |
+        idf.py build
