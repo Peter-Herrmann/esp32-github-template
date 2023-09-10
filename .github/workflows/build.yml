@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: espressif/esp-idf:latest
+      image: espressif/esp-idf
 
     steps:
     - name: Checkout code
