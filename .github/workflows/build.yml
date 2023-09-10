@@ -29,5 +29,6 @@ jobs:
 
     - name: Build ESP32 project
       run: |
+        activate
         $IDF_PATH/tools/idf.py build
 
