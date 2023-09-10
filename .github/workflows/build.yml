@@ -25,7 +25,7 @@ jobs:
 
     - name: List ESP-IDF directory contents
       run: |
-        tree $IDF_PATH
+        ls -la $IDF_PATH/tools
 
     - name: Build ESP32 project
       run: |
