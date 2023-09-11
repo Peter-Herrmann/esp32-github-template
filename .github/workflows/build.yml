@@ -12,23 +12,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    container:
-      image: espressif/idf
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up ESP32 environment
-      run: |
-        . /opt/esp/idf/export.sh
-
-    - name: List ESP-IDF directory contents
-      run: |
-        ls -la $IDF_PATH/tools
-
-    - name: Build ESP32 project
-      run: |
-        activate
-        $IDF_PATH/tools/idf.py build
+        - name: Checkout code
+          uses: actions/checkout@v2
+    
+        - name: Run commands inside Docker
+          run: |
+            docker pull espressif/idf
+            docker run --rm -v $PWD:/project -w /project -u $UID -e HOME=/tmp espressif/idf idf.py create-project app
+            docker run --rm -v $PWD:/project -w /project -u $UID -e HOME=/tmp espressif/idf idf.py build
 
