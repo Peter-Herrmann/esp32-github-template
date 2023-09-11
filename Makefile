@@ -11,3 +11,6 @@ build:
 
 config:
 	cd app && docker run --rm -v "$$PWD:/project" -w /project -e HOME=/tmp -it espressif/idf idf.py menuconfig
+
+clean:
+	cd app && docker run --rm -v "$$PWD:/project" -w /project -e HOME=/tmp -it espressif/idf idf.py fullclean
