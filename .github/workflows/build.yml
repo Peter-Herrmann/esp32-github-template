@@ -16,10 +16,10 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v2
     
-        - name: Run commands inside Docker
+        - name: Pull latest Espressif IDF Docker Container
           run: |
             docker pull espressif/idf
-            docker run --rm -v $PWD:/project -w /project -u $UID -e HOME=/tmp espressif/idf idf.py create-project app
-            cd app
-            docker run --rm -v $PWD:/project -w /project -u $UID -e HOME=/tmp espressif/idf idf.py build
-
+    
+        - name: Build Image
+          run: |
+            make build
