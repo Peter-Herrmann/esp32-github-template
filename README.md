@@ -4,7 +4,11 @@
 
 A template project for ESP32 based systems
 
-## Building Locally
+## Environment Setup
+
+### Linux
+
+to do
 
 ### Windows
 ---
@@ -21,7 +25,12 @@ A template project for ESP32 based systems
     - Close any active Debian (WSL) terminals, open a new Debian terminal and enter `docker --version`
       - If Docker and Debian were integrated successfully, you should see a version number.
 
-### Downloading Espressif-IDF
+### Downloading Espressif-IDF (All Operating Systems)
 
 1. Run `docker pull espressif/idf` to install the latest version of [Espressif's IDF Docker image](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-docker-image.html) 
-2. 
+
+## Usage
+
+1. Configure the project with `make config`
+2. Build the firmware image with `make build`
+3. Clean the project with `make clean`
