@@ -7,10 +7,10 @@ IDF_CMD     := idf.py
 .PHONY: build config
 
 build:
-	cd app && docker run --rm -v "$$PWD:/project" -w /project -e HOME=/tmp -it espressif/idf idf.py build
+	cd app && docker run --rm -v "$$PWD:/project" -w /project -e HOME=/tmp espressif/idf idf.py build
 
 config:
-	cd app && docker run --rm -v "$$PWD:/project" -w /project -e HOME=/tmp -it espressif/idf idf.py menuconfig
+	cd app && docker run --rm -v "$$PWD:/project" -w /project -e HOME=/tmp espressif/idf idf.py menuconfig
 
 clean:
-	cd app && docker run --rm -v "$$PWD:/project" -w /project -e HOME=/tmp -it espressif/idf idf.py fullclean
+	cd app && docker run --rm -v "$$PWD:/project" -w /project -e HOME=/tmp espressif/idf idf.py fullclean
