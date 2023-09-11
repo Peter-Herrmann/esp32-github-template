@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+    
+        - name: Run commands inside Docker
+          run: |
+            docker pull espressif/idf
+            docker run --rm -v $PWD:/project -w /project -u $UID -e HOME=/tmp espressif/idf idf.py create-project app
+            cd app
+            docker run --rm -v $PWD:/project -w /project -u $UID -e HOME=/tmp espressif/idf idf.py build
+
