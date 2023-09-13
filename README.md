@@ -1,6 +1,6 @@
 # ESP32
 
-[![Build](https://github.com/Peter-Herrmann/ESP32/actions/workflows/build.yml/badge.svg)](https://github.com/Peter-Herrmann/ESP32/actions/workflows/build.yml)
+[![Build](https://github.com/Peter-Herrmann/esp32-github-template/actions/workflows/build.yml/badge.svg)](https://github.com/Peter-Herrmann/ESP32/actions/workflows/build.yml)
 
 A template project for ESP32 based systems
 
@@ -8,7 +8,7 @@ A template project for ESP32 based systems
 
 ### Linux
 
-to do
+The easiest method is to install the docker extension in VSCode.
 
 ### Windows
 ---
